@@ -1,0 +1,36 @@
+{
+  "name": "root",
+  "private": true,
+  "dependencies": {
+    "styled-components": "4.3.2",
+    "vconsole": "3.3.4"
+  },
+  "scripts": {
+    "bootstrap": "npm i && lerna bootstrap",
+    "build:lib": "lerna exec --scope '@eosdt/transact-*' --scope @eosdt/utils --scope @eosdt/client --scope @eosdt/ui --scope @eosdt/utils --scope @eosdt/widget -- npm run build",
+    "build:services": "lerna exec --scope '@eosdt/*-service' -- npm run build",
+    "build:main": "lerna exec --scope @eosdt/affiliate --scope @eosdt/qr --scope @eosdt/voting --scope @eosdt/website -- npm run build",
+    "build:external": "lerna exec --scope @eosdt/cryptodefiance --scope @eosdt/gateway -- npm run build",
+    "build": "npm run build:lib && npm run build:services && npm run build:main && npm run build:external",
+    "clean": "lerna clean && rm -rf node_modules/",
+    "firebase:deploy": "npx firebase deploy",
+    "gateway:ui": "rm -rf packages/eosdt-gateway/app/components/ui/lib && cp -r packages/ui/src/components packages/eosdt-gateway/app/components/ui/lib && rm -f packages/eosdt-gateway/app/components/ui/lib/*/index.stories.tsx",
+    "lint": "tslint -c tslint.json packages/*/src/**/*.{ts,tsx} --format verbose",
+    "lint:fix": "tslint -c tslint.json packages/*/src/**/*.{ts,tsx} --format verbose --fix",
+    "release": "npm run clean && npm run bootstrap && npm run lint && npm run build && git add packages/*/lib/* packages/*/dist/* && git commit -am 'Update build' && npx lerna version",
+    "publish-package": "npx lerna bootstrap --scope @eosdt/client --scope @eosdt/transact-creator --scope @eosdt/widget --scope @eosdt/utils --include-dependencies && npx lerna publish from-package --yes"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "devDependencies": {
+    "@types/node": "12.7.12",
+    "@types/react-slick": "0.23.4",
+    "@types/styled-components": "4.1.19",
+    "lerna": "3.16.4",
+    "nodemon": "1.19.4",
+    "pre-commit": "1.2.2",
+    "tslint": "5.19.0",
+    "typescript": "3.4.3"
+  }
+}

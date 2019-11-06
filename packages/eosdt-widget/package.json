@@ -1,0 +1,38 @@
+{
+  "name": "@eosdt/widget",
+  "version": "1.2.12",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "clean:structure": "rm -rf lib/src lib/package.json",
+    "start:lib": "../../node_modules/.bin/nodemon -e ts --watch src --exec 'npm run build'",
+    "start:dist": "npm run build:dist && cd dist && python -m SimpleHTTPServer 8000",
+    "start": "npm run start:dist & npm run start:lib & wait",
+    "build:dist": "webpack --mode production && cp -r public dist && npm run clean:structure",
+    "build": "tsc --build && cp -rf lib/src/* lib/ && npm run clean:structure",
+    "test": "echo Test",
+    "preversion": "npm run build:dist && cp -r dist ../eosdt-affiliate/dist/dev/widget",
+    "postversion": "git add lib dist ../eosdt-affiliate/dist && git commit -am 'Update dev widget iframe $npm_package_version' && git push origin master",
+    "prepublish": "npm run build:dist"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/",
+    "access" : "public"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "3.2.0",
+    "source-map-support": "0.5.12",
+    "ts-loader": "5.3.3",
+    "ts-node": "8.3.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-serve": "^2.0.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.4.5",
+    "@eosdt/client": "^0.2.5",
+    "@eosdt/eosdt-js": "0.6.3",
+    "@eosdt/transact-creator": "^0.2.7",
+    "firebase": "^7.2.2"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "command": {
+    "publish": {
+      "allowBranch": "eosdt"
+    },
+    "version": {
+      "allowBranch": "master"
+    }
+  },
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent",
+  "ignoreChanges": ["**/node_modules/**", "**/*.md", "**/package-lock.json", "**/dist/**"]
+}

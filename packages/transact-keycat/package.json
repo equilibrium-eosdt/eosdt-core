@@ -1,0 +1,37 @@
+{
+  "name": "@eosdt/transact-keycat",
+  "version": "0.2.7",
+  "description": "> TODO: description",
+  "author": "Alexander Dodonov <pr0fedt@gmail.com>",
+  "homepage": "https://bitbucket.org/oxygen-git/eosdt-frontend#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/oxygen-git/eosdt-frontend.git"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "gitHead": "95e40e1fff844c3714bfe0020231914af9589b61",
+  "devDependencies": {
+    "@eosdt/client": "^0.2.5"
+  },
+  "peerDependencies": {
+    "@eosdt/client": "^0.2.5"
+  },
+  "dependencies": {
+    "keycatjs": "^0.9.1"
+  }
+}
