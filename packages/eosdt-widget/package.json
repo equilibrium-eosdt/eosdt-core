@@ -1,6 +1,6 @@
 {
   "name": "@eosdt/widget",
-  "version": "1.2.12",
+  "version": "1.2.14",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org/",
-    "access" : "public"
+    "access": "public"
   },
   "devDependencies": {
     "html-webpack-plugin": "3.2.0",
@@ -30,9 +30,9 @@
   },
   "dependencies": {
     "@babel/runtime": "7.4.5",
-    "@eosdt/client": "^0.2.5",
+    "@eosdt/client": "^0.2.7",
     "@eosdt/eosdt-js": "0.6.3",
-    "@eosdt/transact-creator": "^0.2.7",
+    "@eosdt/transact-creator": "^0.2.9",
     "firebase": "^7.2.2"
   }
 }

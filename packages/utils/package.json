@@ -1,6 +1,6 @@
 {
   "name": "@eosdt/utils",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "description": "> TODO: description",
   "author": "Alexander Dodonov <pr0fedt@gmail.com>",
   "homepage": "https://bitbucket.org/oxygen-git/eosdt-frontend#readme",
@@ -15,7 +15,7 @@
   ],
   "publishConfig": {
     "registry": "http://registry.npmjs.org/",
-    "access" : "public"
+    "access": "public"
   },
   "repository": {
     "type": "git",

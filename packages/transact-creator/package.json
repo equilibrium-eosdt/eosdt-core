@@ -1,6 +1,6 @@
 {
   "name": "@eosdt/transact-creator",
-  "version": "0.2.7",
+  "version": "0.2.9",
   "description": "> TODO: description",
   "author": "Alexander Dodonov <pr0fedt@gmail.com>",
   "homepage": "https://bitbucket.org/oxygen-git/eosdt-frontend#readme",
@@ -26,7 +26,7 @@
   },
   "gitHead": "95e40e1fff844c3714bfe0020231914af9589b61",
   "devDependencies": {
-    "@eosdt/client": "^0.2.5"
+    "@eosdt/client": "^0.2.7"
   },
   "peerDependencies": {
     "@eosdt/client": "^0.2.0"
