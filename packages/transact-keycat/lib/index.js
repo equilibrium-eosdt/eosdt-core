@@ -48,9 +48,11 @@ class KeycatTransactionProvider {
         return {
             transact: (transaction, options) => __awaiter(this, void 0, void 0, function* () {
                 const opt = Object.assign({ blocksBehind: 3, expireSeconds: 30 }, options);
-                return yield this.keycat
+                const tx = yield this.keycat
                     .account(this.$account.name)
                     .transact(transaction, opt);
+                console.warn("keycat tx:", tx);
+                return tx;
             }),
         };
     }

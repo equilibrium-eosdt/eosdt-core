@@ -1,6 +1,7 @@
 {
   "name": "@eosdt/client",
-  "version": "0.2.7",
+  "private": false,
+  "version": "0.3.0",
   "description": "> TODO: description",
   "author": "Alexander Dodonov <pr0fedt@gmail.com>",
   "homepage": "https://bitbucket.org/oxygen-git/eosdt-frontend#readme",
@@ -26,9 +27,10 @@
   },
   "gitHead": "95e40e1fff844c3714bfe0020231914af9589b61",
   "dependencies": {
-    "@eosdt/utils": "^0.2.5",
+    "@eosdt/utils": "^0.3.0",
     "@types/node-fetch": "^2.5.2",
     "eosjs": "20.0.0",
-    "node-fetch": "2.6.0"
+    "node-fetch": "2.6.0",
+    "react-spinners": "^0.6.1"
   }
 }

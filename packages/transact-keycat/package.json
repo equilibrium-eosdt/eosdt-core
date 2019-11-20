@@ -1,6 +1,6 @@
 {
   "name": "@eosdt/transact-keycat",
-  "version": "0.2.9",
+  "version": "0.2.15",
   "description": "> TODO: description",
   "author": "Alexander Dodonov <pr0fedt@gmail.com>",
   "homepage": "https://bitbucket.org/oxygen-git/eosdt-frontend#readme",
@@ -26,12 +26,13 @@
   },
   "gitHead": "95e40e1fff844c3714bfe0020231914af9589b61",
   "devDependencies": {
-    "@eosdt/client": "^0.2.7"
+    "@eosdt/client": "^0.3.0"
   },
   "peerDependencies": {
     "@eosdt/client": "^0.2.5"
   },
   "dependencies": {
-    "keycatjs": "^0.9.1"
+    "keycatjs": "^0.9.1",
+    "react-spinners": "^0.6.1"
   }
 }

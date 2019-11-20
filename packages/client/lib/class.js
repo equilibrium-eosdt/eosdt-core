@@ -71,6 +71,7 @@ class Client {
     }
     set onUpdate(handler) {
         this.updateHandler = handler;
+        this.updateHandler(this.id);
     }
     get poolLength() {
         return this.networks.length;

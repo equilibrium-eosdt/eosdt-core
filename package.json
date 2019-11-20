@@ -6,18 +6,18 @@
     "vconsole": "3.3.4"
   },
   "scripts": {
-    "bootstrap": "npm i && lerna bootstrap",
-    "build:lib": "lerna exec --scope '@eosdt/transact-*' --scope @eosdt/utils --scope @eosdt/client --scope @eosdt/ui --scope @eosdt/utils --scope @eosdt/widget -- npm run build",
+    "bootstrap": "npm i && lerna bootstrap --ignore @eosdt/cryptodefiance --ignore @eosdt/gateway",
+    "build:lib": "lerna exec --scope '@eosdt/transact-*' --scope @eosdt/utils --scope @eosdt/client --scope @eosdt/ui --scope @eosdt/eos --scope @eosdt/widget -- npm run build",
     "build:services": "lerna exec --scope '@eosdt/*-service' -- npm run build",
-    "build:main": "lerna exec --concurrency 1 --scope @eosdt/affiliate --scope @eosdt/brainstorm --scope @eosdt/qr --scope @eosdt/voting --scope @eosdt/website -- npm run build",
+    "build:main": "lerna exec --concurrency 1 --scope @eosdt/affiliate --scope @eosdt/exchange --scope @eosdt/qr --scope @eosdt/voting --scope @eosdt/website -- npm run build",
     "build:external": "lerna exec --concurrency 1 --scope @eosdt/cryptodefiance --scope @eosdt/gateway -- npm run build",
-    "build": "npm run build:lib && npm run build:services && npm run build:main && npm run build:external",
-    "clean": "lerna clean && rm -rf node_modules/",
+    "build": "npm run build:lib && npm run build:services && npm run build:main",
+    "clean": "lerna clean --ignore @eosdt/gateway --ignore @eosdt/cryptodefiance && rm -rf node_modules/",
     "firebase:deploy": "npx firebase deploy",
     "gateway:ui": "rm -rf packages/eosdt-gateway/app/components/ui/lib && cp -r packages/ui/src/components packages/eosdt-gateway/app/components/ui/lib && rm -f packages/eosdt-gateway/app/components/ui/lib/*/index.stories.tsx",
     "lint": "tslint -c tslint.json packages/*/src/**/*.{ts,tsx} --format verbose",
     "lint:fix": "tslint -c tslint.json packages/*/src/**/*.{ts,tsx} --format verbose --fix",
-    "release": "npm run clean && npm run bootstrap && npm run lint && npm run build && git add packages/*/lib/* packages/*/dist/* && git commit -am 'Update build' && npx lerna version",
+    "release": "npm run clean && npm run bootstrap && npm run lint && npm run build && git add packages/*/lib/* packages/*/dist/* && git commit -am 'Update build' && npx lerna version && npx lerna exec --scope @eosdt/widget -- npm run postversion:copy",
     "publish-package": "npx lerna bootstrap --scope @eosdt/client --scope @eosdt/transact-creator --scope @eosdt/widget --scope @eosdt/utils --include-dependencies && npx lerna publish from-package --yes"
   },
   "pre-commit": [

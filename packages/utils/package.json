@@ -1,6 +1,6 @@
 {
   "name": "@eosdt/utils",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "> TODO: description",
   "author": "Alexander Dodonov <pr0fedt@gmail.com>",
   "homepage": "https://bitbucket.org/oxygen-git/eosdt-frontend#readme",
@@ -25,5 +25,8 @@
     "build": "tsc --build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "gitHead": "95e40e1fff844c3714bfe0020231914af9589b61"
+  "gitHead": "95e40e1fff844c3714bfe0020231914af9589b61",
+  "dependencies": {
+    "react-spinners": "^0.6.1"
+  }
 }

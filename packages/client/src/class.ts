@@ -46,6 +46,7 @@ export default class Client {
 
   public set onUpdate(handler: (id: string) => void) {
     this.updateHandler = handler;
+    this.updateHandler(this.id);
   }
 
   public get poolLength() {
@@ -92,7 +93,7 @@ export default class Client {
     };
   }
 
-  public get rpc() {
+  public get rpc(): JsonRpc {
     return this.pool[this.poolIndex % this.poolLength];
   }
 

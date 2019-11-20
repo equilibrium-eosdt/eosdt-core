@@ -12,6 +12,7 @@ class Signal {
             if (this.finished) {
                 throw new Error("Signal already finished");
             }
+            this.finished = true;
             this.resolve(v);
         };
         this.cancel = (e) => {
@@ -20,6 +21,9 @@ class Signal {
             }
             this.reject(e);
         };
+    }
+    get done() {
+        return this.finished;
     }
 }
 exports.default = Signal;

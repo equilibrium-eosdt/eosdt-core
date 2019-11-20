@@ -57,9 +57,12 @@ class KeycatTransactionProvider implements TransactionProvider {
       ) => {
         const opt = { blocksBehind: 3, expireSeconds: 30, ...options };
 
-        return await this.keycat
+        const tx = await this.keycat
           .account(this.$account!.name)
           .transact(transaction, opt);
+
+        console.warn("keycat tx:", tx);
+        return tx;
       },
     };
   }

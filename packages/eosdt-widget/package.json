@@ -1,6 +1,6 @@
 {
   "name": "@eosdt/widget",
-  "version": "1.2.14",
+  "version": "1.2.22",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
@@ -11,9 +11,7 @@
     "build:dist": "webpack --mode production && cp -r public dist && npm run clean:structure",
     "build": "tsc --build && cp -rf lib/src/* lib/ && npm run clean:structure",
     "test": "echo Test",
-    "preversion": "npm run build:dist && cp -r dist ../eosdt-affiliate/dist/dev/widget",
-    "postversion": "git add lib dist ../eosdt-affiliate/dist && git commit -am 'Update dev widget iframe $npm_package_version' && git push origin master",
-    "prepublish": "npm run build:dist"
+    "postversion:copy": "npm run build:dist && cp -r dist ../eosdt-affiliate/dist/dev/widget && git add lib dist ../eosdt-affiliate/dist && git commit -am 'Update dev widget iframe $npm_package_version' && git push origin master"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org/",
@@ -30,9 +28,10 @@
   },
   "dependencies": {
     "@babel/runtime": "7.4.5",
-    "@eosdt/client": "^0.2.7",
+    "@eosdt/client": "^0.3.0",
     "@eosdt/eosdt-js": "0.6.3",
-    "@eosdt/transact-creator": "^0.2.9",
-    "firebase": "^7.2.2"
+    "@eosdt/transact-creator": "^0.2.15",
+    "firebase": "^7.2.2",
+    "react-spinners": "^0.6.1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@eosdt/transact-scatter-lynx",
-  "version": "0.2.8",
+  "version": "0.2.14",
   "description": "> TODO: description",
   "author": "Alexander Dodonov <pr0fedt@gmail.com>",
   "homepage": "https://bitbucket.org/oxygen-git/eosdt-frontend#readme",
@@ -26,9 +26,10 @@
   },
   "gitHead": "95e40e1fff844c3714bfe0020231914af9589b61",
   "dependencies": {
-    "@eosdt/transact-scatter": "^0.2.8",
+    "@eosdt/transact-scatter": "^0.2.14",
     "@scatterjs/eosjs2": "1.5.26",
     "@scatterjs/lynx": "1.6.37",
-    "eosjs": "20.0.0"
+    "eosjs": "20.0.0",
+    "react-spinners": "^0.6.1"
   }
 }

@@ -3,6 +3,10 @@ export default class Signal<T> {
   private reject?: (e: Error) => void;
   private finished: boolean = false;
 
+  public get done() {
+    return this.finished;
+  }
+
   private promise: Promise<T> = new Promise((resolve, reject) => {
     this.resolve = resolve;
     this.reject = reject;
@@ -15,6 +19,7 @@ export default class Signal<T> {
       throw new Error("Signal already finished");
     }
 
+    this.finished = true;
     this.resolve!(v);
   };
 
