@@ -1,6 +1,6 @@
 {
   "name": "@eosdt/widget",
-  "version": "1.2.22",
+  "version": "1.2.23",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
@@ -28,9 +28,9 @@
   },
   "dependencies": {
     "@babel/runtime": "7.4.5",
-    "@eosdt/client": "^0.3.0",
+    "@eosdt/client": "^0.3.1",
     "@eosdt/eosdt-js": "0.6.3",
-    "@eosdt/transact-creator": "^0.2.15",
+    "@eosdt/transact-creator": "^0.2.16",
     "firebase": "^7.2.2",
     "react-spinners": "^0.6.1"
   }

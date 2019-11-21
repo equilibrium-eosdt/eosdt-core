@@ -18,7 +18,8 @@
     "lint": "tslint -c tslint.json packages/*/src/**/*.{ts,tsx} --format verbose",
     "lint:fix": "tslint -c tslint.json packages/*/src/**/*.{ts,tsx} --format verbose --fix",
     "release": "npm run clean && npm run bootstrap && npm run lint && npm run build && git add packages/*/lib/* packages/*/dist/* && git commit -am 'Update build' && npx lerna version && npx lerna exec --scope @eosdt/widget -- npm run postversion:copy",
-    "publish-package": "npx lerna bootstrap --scope @eosdt/client --scope @eosdt/transact-creator --scope @eosdt/widget --scope @eosdt/utils --include-dependencies && npx lerna publish from-package --yes"
+    "publish-package": "npx lerna bootstrap --scope @eosdt/client --scope @eosdt/transact-creator --scope @eosdt/widget --scope @eosdt/utils --include-dependencies && npx lerna publish from-package --yes",
+    "watch": "npx lerna exec --scope @eosdt/eos --scope @eosdt/ui -- npm run watch"
   },
   "pre-commit": [
     "lint"

@@ -1,4 +1,5 @@
+import Mutex from "./mutex";
 import Signal from "./signal";
 export * from "./tools";
-export { Signal };
+export { Mutex, Signal };
 export declare const delay: (ms: number) => Promise<{}>;
