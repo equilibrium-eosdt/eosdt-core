@@ -17,30 +17,30 @@ export default function Rates(deps: Deps) {
     },
 
     onInit: async (w) => {
-
       const {
         ctx: { baseUrl },
-        } = w;
+      } = w;
 
       w.update({
-          baseUrl,
-        });
+        baseUrl,
+      });
 
       setInterval(() => w.update(), 60000);
     },
 
     render: (state, r) => {
       const { getRates } = deps;
-
       const { baseUrl } = state;
-
       const rates = getRates && getRates();
-      console.info(state);
 
       const balanceToNumber = (balance: string) => {
-        if (balance === undefined) { balance = ""; }
+        if (balance === undefined) {
+          balance = "";
+        }
         const x = balance.match(/[0-9,\.]+/g);
-        if (x === null) { return 0; }
+        if (x === null) {
+          return 0;
+        }
         return Number(x[0]);
       };
 

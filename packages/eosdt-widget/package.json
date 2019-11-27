@@ -1,15 +1,16 @@
 {
   "name": "@eosdt/widget",
-  "version": "1.2.23",
+  "version": "1.2.24",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
     "clean:structure": "rm -rf lib/src lib/package.json",
     "start:lib": "../../node_modules/.bin/nodemon -e ts --watch src --exec 'npm run build'",
-    "start:dist": "npm run build:dist && cd dist && python -m SimpleHTTPServer 8000",
+    "start:cdn": "cd dist && python -m SimpleHTTPServer",
+    "start:dist": "webpack --watch & npm run start:cdn & wait",
     "start": "npm run start:dist & npm run start:lib & wait",
     "build:dist": "webpack --mode production && cp -r public dist && npm run clean:structure",
-    "build": "tsc --build && cp -rf lib/src/* lib/ && npm run clean:structure",
+    "build": "../../node_modules/.bin/tsc --build && cp -rf lib/src/* lib/ && npm run clean:structure",
     "test": "echo Test",
     "postversion:copy": "npm run build:dist && cp -r dist ../eosdt-affiliate/dist/dev/widget && git add lib dist ../eosdt-affiliate/dist && git commit -am 'Update dev widget iframe $npm_package_version' && git push origin master"
   },

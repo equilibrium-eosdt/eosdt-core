@@ -60,7 +60,6 @@ function Rates(deps) {
             var getRates = deps.getRates;
             var baseUrl = state.baseUrl;
             var rates = getRates && getRates();
-            console.info(state);
             var balanceToNumber = function (balance) {
                 if (balance === undefined) {
                     balance = "";

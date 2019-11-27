@@ -35,7 +35,6 @@ export default function Parameters(deps: Deps) {
 
     render: (state, r) => {
       const { eos, eosdt } = state;
-      console.info({ eos, eosdt });
 
       return r`
         <h2 class="equil-position-manage__parametersTitle">

@@ -373,7 +373,7 @@ var ManagePosition = {
             maxEos = (usd - eosdt * minLtv) / parseFloat(rate.rate);
             maxEosdt = (usd - minLtv * eosdt) / minLtv;
             if (ltv !== w.state.ltv ||
-                minRate !== w.state.minRate ||
+                (minRate !== w.state.minRate && !Number.isNaN(minRate)) ||
                 maxEos !== w.state.maxEos ||
                 maxEosdt !== w.state.maxEosdt ||
                 eosdt !== w.state.eosdt ||

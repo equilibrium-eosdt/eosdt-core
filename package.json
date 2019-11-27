@@ -17,7 +17,7 @@
     "gateway:ui": "rm -rf packages/eosdt-gateway/app/components/ui/lib && cp -r packages/ui/src/components packages/eosdt-gateway/app/components/ui/lib && rm -f packages/eosdt-gateway/app/components/ui/lib/*/index.stories.tsx",
     "lint": "tslint -c tslint.json packages/*/src/**/*.{ts,tsx} --format verbose",
     "lint:fix": "tslint -c tslint.json packages/*/src/**/*.{ts,tsx} --format verbose --fix",
-    "release": "npm run clean && npm run bootstrap && npm run lint && npm run build && git add packages/*/lib/* packages/*/dist/* && git commit -am 'Update build' && npx lerna version && npx lerna exec --scope @eosdt/widget -- npm run postversion:copy",
+    "release": "npm run clean && npm run bootstrap && npm run lint && npm run build && git add packages/*/lib/* packages/*/dist/* && git commit -am 'Update build' && npx lerna version",
     "publish-package": "npx lerna bootstrap --scope @eosdt/client --scope @eosdt/transact-creator --scope @eosdt/widget --scope @eosdt/utils --include-dependencies && npx lerna publish from-package --yes",
     "watch": "npx lerna exec --scope @eosdt/eos --scope @eosdt/ui -- npm run watch"
   },

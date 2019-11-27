@@ -23,16 +23,15 @@ export default function Balances(deps: Deps) {
     },
 
     onInit: async (w) => {
-
-    const {
-      ctx: { baseUrl },
+      const {
+        ctx: { baseUrl },
       } = w;
 
-    w.update({
+      w.update({
         baseUrl,
       });
 
-    setInterval(() => {
+      setInterval(() => {
         w.update();
       }, 6000);
     },
@@ -54,9 +53,13 @@ export default function Balances(deps: Deps) {
       const rates = getRates && getRates();
 
       const balanceToNumber = (balance: string) => {
-        if (balance === undefined) { balance = ""; }
+        if (balance === undefined) {
+          balance = "";
+        }
         const x = balance.match(/[0-9,\.]+/g);
-        if (x === null) { return 0; }
+        if (x === null) {
+          return 0;
+        }
         return Number(x[0]);
       };
 

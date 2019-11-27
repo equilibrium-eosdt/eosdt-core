@@ -15,6 +15,7 @@ module.exports = (env, argv) => ({
         use: [
           {
             loader: "ts-loader",
+            options: { instance: "../../node_modules/.bin/tsc" }
           },
         ],
         exclude: /node_modules/,
