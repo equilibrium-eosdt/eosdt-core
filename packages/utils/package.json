@@ -1,6 +1,6 @@
 {
   "name": "@eosdt/utils",
-  "version": "0.3.1",
+  "version": "0.3.5",
   "description": "> TODO: description",
   "author": "Alexander Dodonov <pr0fedt@gmail.com>",
   "homepage": "https://bitbucket.org/oxygen-git/eosdt-frontend#readme",
@@ -27,6 +27,6 @@
   },
   "gitHead": "95e40e1fff844c3714bfe0020231914af9589b61",
   "dependencies": {
-    "react-spinners": "^0.6.1"
+    "react-router-dom": "^5.1.2"
   }
 }

@@ -2,12 +2,13 @@
   "name": "root",
   "private": true,
   "dependencies": {
+    "@types/react-helmet": "5.0.14",
     "styled-components": "4.3.2",
     "vconsole": "3.3.4"
   },
   "scripts": {
     "bootstrap": "npm i && lerna bootstrap --ignore @eosdt/cryptodefiance --ignore @eosdt/gateway",
-    "build:lib": "lerna exec --scope '@eosdt/transact-*' --scope @eosdt/utils --scope @eosdt/client --scope @eosdt/ui --scope @eosdt/eos --scope @eosdt/widget -- npm run build",
+    "build:lib": "lerna exec --scope '@eosdt/transact-*' --scope @eosdt/utils --scope @eosdt/client --scope @eosdt/ui --scope @eosdt/eos --scope @eosdt/widget --scope @eosdt/model -- npm run build",
     "build:services": "lerna exec --scope '@eosdt/*-service' -- npm run build",
     "build:main": "lerna exec --concurrency 1 --scope @eosdt/affiliate --scope @eosdt/exchange --scope @eosdt/qr --scope @eosdt/voting --scope @eosdt/website -- npm run build",
     "build:external": "lerna exec --concurrency 1 --scope @eosdt/cryptodefiance --scope @eosdt/gateway -- npm run build",
